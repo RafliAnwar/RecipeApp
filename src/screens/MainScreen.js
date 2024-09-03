@@ -5,6 +5,7 @@ import SavedRecipesScreen from './SavedRecipesScreen';
 import ScanRecipeScreen from './ScanRecipeScreen';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
+import RecipeDetailScreen from './RecipeDetailScreen';
 
 const Tab = createBottomTabNavigator();
 

@@ -2,14 +2,21 @@ import React from "react";
 import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 import colors from "../theme/colors";
 import { Ionicons } from '@expo/vector-icons';
+import { useNavigation } from "@react-navigation/native";
 
 const ItemRecipe = ({ item }) => {
+    const navigation = useNavigation();
+
     console.log('props', item);
     return (
         <TouchableOpacity
             style={styles.itemContainer}
             onPress={() => {
-            }}>
+                navigation.navigate('RecipeDetailScreen', {
+                    recipeId: item.id,
+                })
+            }}
+        >
             <Image
                 style={styles.imageRecipes}
                 source={{ uri: item.image }}
@@ -47,7 +54,7 @@ const styles = StyleSheet.create({
         marginLeft: 16,
         flex: 1,
     },
-    ratingContainer:{
+    ratingContainer: {
         flexDirection: "row",
         alignItems: "center",
         marginTop: 8,
